@@ -22,9 +22,14 @@ return {
       lspconfig.lua_ls.setup({})
       lspconfig.clangd.setup({})
       lspconfig.pyright.setup({})
+      
+
+      -- keybinds
       vim.keymap.set('n', 'K',vim.lsp.buf.hover,{})
-      vim.keymap.set('n', '<leader>gd',vim.lsp.buf.definition,{})
+      vim.keymap.set('n', '<leader>df',vim.lsp.buf.definition,{})
+      vim.keymap.set('n', '<leader>dc',vim.lsp.buf.declaration,{})
       vim.keymap.set('n', '<leader>ca',vim.lsp.buf.code_action,{})
+      vim.keymap.set('n', '<leader>rn',vim.lsp.buf.rename,{})
     end
   }
 }
