@@ -1,2 +1,0 @@
-# NeovimConfig
-My neovim config

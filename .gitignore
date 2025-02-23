@@ -1,3 +1,16 @@
-lazy-lock.json
-lazyvim.json
-.luarc.json
+# Ignore everything in .config
+*
+
+# Allow tracking of specific directories
+!autostart/
+!findex/
+!fish/
+!fusuma/
+!lazygit/
+!nvim/
+!tmux/
+
+# Ignors specific to neovim folder
+nvim/lazy-lock.json
+nvim/lazyvim.json
+nvim/.luarc.json
