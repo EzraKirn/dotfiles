@@ -9,6 +9,5 @@ if status is-interactive
         end
     end
 end
-set -gx TERM "tmux-256color"
-set -gx COLORTERM "truecolor"
 
+set -gx TERM "tmux-256color"

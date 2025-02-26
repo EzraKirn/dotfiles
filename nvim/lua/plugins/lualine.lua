@@ -55,6 +55,20 @@ return {
         theme = my_lualine_theme,
       },
       sections = {
+        lualine_b = {
+          {
+            'macro',
+            fmt = function()
+              local reg = vim.fn.reg_recording()
+              if reg ~= "" then
+                return "Recording @" .. reg
+              end
+              return nil
+            end,
+            color = { fg = "#ff9e64" },
+            draw_empty = false,
+          },
+        },
         lualine_x = {
           {
             lazy_status.updates,

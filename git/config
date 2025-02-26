@@ -1,0 +1,8 @@
+[user]
+	name = Grzeszko
+	email = wyborskigrzesiek+web@gmail.com
+
+
+[alias]
+    basename = "!basename $(git rev-parse --show-toplevel)"
+
