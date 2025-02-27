@@ -5,7 +5,7 @@ import = [
 
 
 [font]
-size = 12  # Adjust size as needed
+size = 20  # Adjust size as needed
 
 [font.normal]
 family = "Hack Nerd Font"
@@ -23,3 +23,5 @@ style = "Italic"
 family = "Hack Nerd Font"
 style = "Bold Italic"
 
+[window]
+startup_mode = "Maximized"
