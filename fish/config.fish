@@ -11,3 +11,9 @@ if status is-interactive
 end
 
 set -gx TERM "tmux-256color"
+
+
+# Aliases
+alias clr="clear" 
+alias tls="tmux list-sessions" 
+
