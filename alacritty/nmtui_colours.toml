@@ -1,0 +1,18 @@
+[font]
+size = 18  # Adjust size as needed
+
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+dim_foreground = "#7f849c"
+bright_foreground = "#cdd6f4"
+
+[colors.normal]
+black = "#cdd5be"
+red = "#f5e0dc"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#1e1e2e"
+cyan = "#94e2d5"
+white = "#1e1e2e"
