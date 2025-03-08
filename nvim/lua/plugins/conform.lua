@@ -27,25 +27,13 @@ return {
 		formatters = {
 			clang_format = {
 				-- Change where to find the command
+				inherit = false,
 				command = "/usr/bin/clang-format",
-				prepend_args = { "--style=file:~/dotfiles/clang_format" },
+				args = { "--style=file" },
+				-- args = { "--style=GNU" },
+				-- args = { "--style=file:/home/grzeszko/dotfiles/.clang_format" },
+				-- prepend_args = { "--style=file:/home/grzeszko/dotfiles/.clang_format" },
 			},
 		},
 	},
-
-	-- config = function(_, opts)
-	-- 	local conform = require("conform")
-	--
-	-- 	conform.setup({
-	-- 		formatters_by_ft = {
-	-- 			lua = { "stylua" },
-	-- 			cpp = { "clang-format" },
-	-- 		},
-	--
-	-- 		format_on_save = {
-	-- 			lsp_format = "fallback",
-	-- 			timeout_ms = 500,
-	-- 		},
-	-- 	})
-	-- end,
 }

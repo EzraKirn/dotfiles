@@ -8,3 +8,9 @@ vim.cmd("set foldlevelstart=99")
 vim.opt.foldmethod = "indent"
 vim.opt.foldcolumn = "0"
 
+-- Diagnostic settings
+vim.diagnostic.config({
+	virtual_text = true,
+	signs = true,
+	underline = true,
+})
