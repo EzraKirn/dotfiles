@@ -1,7 +1,3 @@
-import = [
-  #catpuchin theme
-  "~/.config/alacritty/themes/catpuchin/catppuccin-mocha.toml"
-]
 
 
 [font]
@@ -25,3 +21,9 @@ style = "Bold Italic"
 
 [window]
 startup_mode = "Maximized"
+
+[general]
+import = [
+  #catpuchin theme
+  "~/.config/alacritty/themes/catppuccin-mocha.toml"
+]
