@@ -4,5 +4,5 @@
 
 
 [alias]
-    basename = "!basename $(git rev-parse --show-toplevel)"
-
+    getRepo = "!basename $(git rev-parse --show-toplevel)"
+    getBranch = "!git rev-parse --abbrev-ref HEAD"
