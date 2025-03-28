@@ -5,7 +5,7 @@ configuration {
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
+show-icons: false;
 /*	preview-cmd: ;*/
 /*	terminal: "rofi-sensible-terminal";*/
 /*	ssh-client: "ssh";*/
@@ -146,6 +146,16 @@ configuration {
 /*	me-select-entry: "MousePrimary";*/
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
+
+    show-icons: true;
+
+    display-ssh:    "󰣀 ssh:";
+    display-run:    "󱓞 run:";
+    display-drun:   "󰣖 drun:";
+    display-window: "󱂬 window:";
+    display-combi:  "󰕘 combi:";
+    display-filebrowser: "󰉋 filebrowser:";
+
   timeout {
       action: "kb-cancel";
       delay:  0;
@@ -155,3 +165,5 @@ configuration {
       sorting-method:    "name";
   }
 }
+
+@theme "~/dotfiles/rofi/catppuccin-lavrent-mocha.rasi"
