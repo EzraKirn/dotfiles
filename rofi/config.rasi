@@ -148,6 +148,8 @@ show-icons: false;
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 
     show-icons: true;
+    terminal: "alacritty";
+
 
     display-ssh:    "󰣀 ssh:";
     display-run:    "󱓞 run:";
