@@ -1,0 +1,12 @@
+- [x] Polybar
+	- [x] Move all modules to separate config files in modules directory
+	- [x] Fix battery at 100%
+	- [x] Add power submenu (using systemd)
+		- [x] Lock
+		- [x] power off
+		- [x] reboot 
+		- [x] sleap
+		- [x] slep on lid close service
+	- [x] Brightness (using brightnessctl)
+	- [x] Spotify controll
+- [ ] Calcurse

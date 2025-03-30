@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Install tutorial.md",
+                "file": "Desktop environment setup.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Install tutorial"
+              "title": "Desktop environment setup"
             }
           }
         ]
@@ -184,13 +184,15 @@
   },
   "active": "bab2e57f3d012dd1",
   "lastOpenFiles": [
-    "Tools/Polybar.md",
-    "Tools/NVIM.md",
-    "Tools/LazyGit.md",
     "Desktop environment.md",
+    "Desktop environment setup.md",
+    "Tools/polybar.md",
     "Install tutorial.md",
     "GitHub Doc.md",
+    "Tools/xkeyboard.md",
     "Tools.md",
+    "Tools/NVIM.md",
+    "Tools/LazyGit.md",
     "create a link.md",
     "Tools",
     "attachments",
