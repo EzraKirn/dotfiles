@@ -13,10 +13,20 @@
 	- [x] lazygit
 	- [x] obsidian
 	- [x] neofetch
+	- [x] xclip
+	- [x] xcolor
+	- [x] maim
 
 - [ ] install and add symlinks
 	- [x] neovim
 	- [x] dunst
+	```
+	sudo ln -s ~/dotfiles/i3/battery_low_warning.service /etc/systemd/system/
+	sudo ln -s ~/dotfiles/i3/battery_low_warning.timer /etc/systemd/system/
+	sudo systemctl enable battery_low_warning.timer
+	reboot
+	```
+	
 	- [x] rofi
 	- [x] [[picom]]
 	- [ ] [[nnn]]
