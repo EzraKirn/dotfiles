@@ -8,7 +8,9 @@ pre_lock() {
 
 # Lock the screen
 lock_screen() {
+  pkill picom
   i3lock -n -i $HOME/dotfiles/i3/backgrounds/OutsetIslandEvening.png
+  picom
 }
 
 # Post-unlock actions
