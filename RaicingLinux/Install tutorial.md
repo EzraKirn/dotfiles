@@ -1,18 +1,32 @@
 # Arch install
 Assuming install containing I3 and pulseaudio, ly, nvidia proprieatery, and additional packages: 
-- [x] openssh
-- [x] git
-- [x] less
+- [ ] List of all uses packages
+	- [ ]  openssh
+	- [ ] git
+	- [ ] less
+	- [ ] lazygit
+	- [ ] alacritty
+	- [ ] fish
+	- [ ] ttf-hack-nerd
+	- [ ] neovim
+	- [ ] npm
+	- [ ] tmux
+	- [ ] neofetch
+	- [ ] polybar
+	- [ ] picom
+	- [ ] rofi
+	- [ ] xclip
+	- [ ] xcolor
+	- [ ] maim
+	- [ ] dunst
+	- [ ] feh
+	- [ ] brightnessctl
+	- [ ] playerctl
+	- [ ] xkeyboard-config
+	- [ ] firefox
+	- [ ] spotify-launcher
+	- [ ] obsidian
 
-- [x] alacritty
-- [x] fish
-
-- [x] polybar
-
-- [x] firefox
-
-
-- [x] if something is not installed use 
 ```
 sudo pacman -S package_name
 ```
@@ -28,26 +42,34 @@ ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub
 ```
  
- - [x] clone dotfiles repo to home directory (if not working copy git config manually)
+- [x] clone dotfiles repo to home directory (if not working copy git config manually)
 ```
-git clone git@github.com:EzraKirn/dotfiles.git ~/.
-```
-
-- [x] sreate symlinks to alacritty, polybar, I3 and fish (this order) to get basic system config
-```
-ln -s ~/dotfiles/git/ ~/.config/
-ln -s ~/dotfiles/alacritty/ ~/.config/
-ln -s ~/dotfiles/polybar/ ~/.config/
-ln -s ~/dotfiles/i3/ ~/.config/
-ln -s ~/dotfiles/fish/ ~/.config/
+git clone git@github.com:EzraKirn/dotfiles.git ~/dotfiles
 ```
 
-- [X] Set fish as default shell and reboot
+- [x] run setup script that will update system install all needed packages and create symlinks
 ```
-sudo pacman -S fish
-chsh -s /usr/bin/fish
+cd ~/dotfiles
+./setup.sh
+```
+
+- [ ] Add service to show low battery message
+```
+sudo ln -s ~/dotfiles/i3/battery_low_warning.service /etc/systemd/system/
+sudo ln -s ~/dotfiles/i3/battery_low_warning.timer /etc/systemd/system/
+sudo systemctl enable battery_low_warning.timer
+reboot
+```
+	
+- [ ] add service to lock on lid close
+``` 
+sudo ln -s ~/dotfiles/i3/lid-close-xautolock.service /etc/systemd/system/
+sudo systemctl enable lid-close-xautolock.service
 reboot
 ```
 
-### core utis done
-now continue with [[Desktop environment setup]]
+- [x] ly add bg animation
+```
+sudo nvim /etc/ly/config.ini
+```
+and set animation = matrix
