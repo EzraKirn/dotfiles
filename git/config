@@ -6,3 +6,5 @@
 [alias]
     getRepo = "!basename $(git rev-parse --show-toplevel)"
     getBranch = "!git rev-parse --abbrev-ref HEAD"
+[core]
+	editor = nvim
