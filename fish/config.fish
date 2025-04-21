@@ -19,4 +19,5 @@ alias vi="nvim"
 alias clr="clear" 
 alias tls="tmux list-sessions" 
 alias sl="ls -1 -A --group-directories-first" 
+alias activate="source .env/bin/activate.fish" 
 
