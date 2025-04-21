@@ -11,6 +11,7 @@ pacman_packages=(
   ttf-hack-nerd
   neovim
   npm
+  tree-sitter-cli
   tmux
   neofetch
   polybar
@@ -28,10 +29,10 @@ pacman_packages=(
   firefox
   spotify-launcher
   obsidian
-  texlive
+  evince
 )
 
-# AUR packages (need yay or other AUR helper)
+# AUR packages (require yay)
 aur_packages=(
 )
 
@@ -44,20 +45,25 @@ for pkg in "${pacman_packages[@]}"; do
   sudo pacman -S --noconfirm --needed "$pkg"
 done
 
-# Check for yay
+# Check and install yay if not present
 if ! command -v yay &> /dev/null; then
-  echo ">>> yay not found. Skipping AUR packages."
-  echo ">>> To install yay:"
-  echo "git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si"
+  echo ">>> yay not found. Installing yay from AUR..."
+  git clone https://aur.archlinux.org/yay.git /tmp/yay
+  cd /tmp/yay || exit
+  makepkg -si --noconfirm
+  cd ~ || exit
+  rm -rf /tmp/yay
 else
-  echo ">>> Installing AUR packages..."
-  for aur in "${aur_packages[@]}"; do
-    echo "Installing $aur..."
-    yay -S --noconfirm --needed "$aur"
-  done
+  echo ">>> yay is already installed."
 fi
 
-echo ">>> Package instalation done"
+echo ">>> Installing AUR packages..."
+for aur in "${aur_packages[@]}"; do
+  echo "Installing $aur..."
+  yay -S --noconfirm --needed "$aur"
+done
+
+echo ">>> Package installation done"
 echo ">>> Creating symlinks for config folders..."
 
 config_dirs=(
