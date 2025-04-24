@@ -12,7 +12,7 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         -- ensure_installed = { "lua_ls", "clangd", "pyright", "bashls" },
-        ensure_installed = { "lua_ls", "pyright", "bashls" },
+        ensure_installed = { "lua_ls", "pyright", "bashls", "texlab" },
       })
     end,
   },
@@ -42,6 +42,46 @@ return {
       })
       lspconfig.pyright.setup({})
       lspconfig.bashls.setup {}
+      lspconfig.texlab.setup {
+        settings = {
+          texlab = {
+            rootDirectory = nil,
+            build = {
+              executable = 'latexmk',
+              args = { '%f' },
+              onSave = true,
+              forwardSearchAfter = false,
+            },
+            completion = {
+              includePaths = {
+                "/home/grzeszko/texmf/tex/latex/mylatex/LaTexPWR"
+              }
+            },
+            diagnostics = {
+              ignoredPatterns = {}, -- optional
+              includePaths = {
+                "/home/grzeszko/texmf/tex/latex/mylatex/LaTexPWR"
+              }
+            },
+            forwardSearch = {
+              executable = "evince",
+              args = {},
+            },
+            chktex = {
+              onOpenAndSave = false,
+              onEdit = false,
+            },
+            -- diagnosticsDelay = 300,
+            -- latexFormatter = 'latexindent',
+            -- latexindent = {
+            --   ['local'] = nil, -- local is a reserved keyword
+            --   modifyLineBreaks = false,
+            -- },
+            -- bibtexFormatter = 'texlab',
+            -- formatterLineLength = 80,
+          },
+        },
+      }
       -- keybinds
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>df", vim.lsp.buf.definition, {})
