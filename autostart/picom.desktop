@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Picom
+GenericName=X compositor
+Comment=An X compositor
+Categories=Utility;
+Keywords=compositor;composite manager;window effects;transparency;opacity;
+TryExec=picom
+Exec=picom --config /home/grzeszko/dotfiles/picom/picom.conf
+StartupNotify=false
+Terminal=false
+X-GNOME-Autostart-enabled=true
+# Thanks to quequotion for providing this file!
+Icon=compton
