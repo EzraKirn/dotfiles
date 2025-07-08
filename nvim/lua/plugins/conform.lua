@@ -17,6 +17,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       cpp = { "clang-format" },
+      json = { "clang-format" },
     },
 
     format_on_save = {
@@ -30,9 +31,6 @@ return {
         inherit = false,
         command = "/usr/bin/clang-format",
         args = { "--style=file" },
-        -- args = { "--style=GNU" },
-        -- args = { "--style=file:/home/grzeszko/dotfiles/.clang_format" },
-        -- prepend_args = { "--style=file:/home/grzeszko/dotfiles/.clang_format" },
       },
     },
   },
