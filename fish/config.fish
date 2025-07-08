@@ -23,3 +23,23 @@ alias activate="source .env/bin/activate.fish"
 alias mkenv="python3 -m venv .env" 
 alias pyrun="python3 main.py" 
 
+
+# vcpackage bulshit
+set -x VCPKG_ROOT ~/vcpkg
+set -x PATH $VCPKG_ROOT $PATH
+
+function copyfile
+    set filename $argv[1]
+    if test -f $filename
+        begin
+            echo $filename
+            echo
+            cat $filename
+        end | xclip -selection clipboard
+        echo "Copied $filename and its contents to clipboard."
+    else
+        echo "File not found: $filename"
+    end
+end
+
+
