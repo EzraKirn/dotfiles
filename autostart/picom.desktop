@@ -11,5 +11,4 @@ Exec=picom --config /home/grzeszko/dotfiles/picom/picom.conf
 StartupNotify=false
 Terminal=false
 X-GNOME-Autostart-enabled=true
-# Thanks to quequotion for providing this file!
 Icon=compton

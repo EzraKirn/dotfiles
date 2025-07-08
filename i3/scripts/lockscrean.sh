@@ -2,20 +2,19 @@
 
 # Pre-lock actions
 pre_lock() {
-  # Add commands to run before locking, e.g., pause music
   pactl set-sink-mute @DEFAULT_SINK@ 1
 }
 
 # Lock the screen
 lock_screen() {
-  pkill picom
+  # pkill picom
   i3lock -n -i $HOME/dotfiles/i3/backgrounds/OutsetIslandEvening.png
-  picom
+  # picom
 }
 
 # Post-unlock actions
 post_unlock() {
-  # Add commands to run after unlocking, e.g., resume music
+  setxkbmap us,pl -option caps:swapescape
   pactl set-sink-mute @DEFAULT_SINK@ 0
 }
 
@@ -27,4 +26,3 @@ main() {
 }
 
 main
-
