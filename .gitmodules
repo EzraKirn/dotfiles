@@ -4,6 +4,3 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
-[submodule "BrowserHomePage"]
-	path = BrowserHomePage
-	url = git@github.com:EzraKirn/BrowserHomePage.git
