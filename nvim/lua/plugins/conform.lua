@@ -18,6 +18,7 @@ return {
       lua = { "stylua" },
       cpp = { "clang-format" },
       json = { "clang-format" },
+      cmake = { "cmakelang" },
     },
 
     format_on_save = {

@@ -8,6 +8,21 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("telescope").setup({
+        defaults = {
+          file_ignore_patterns = {
+            "vendor/",
+            "node_modules/",
+            "build/",
+            "%.lock",          -- lock files
+            "%.min%.js",       -- minified JS
+            "%.pdf",           -- PDF files
+            "%.png",           -- PNG images
+            "%.jpg", "%.jpeg", -- JPEG images
+            "%.gif",           -- GIFs
+            "%.svg",           -- SVGs
+            "%.webp",          -- WebP images
+          },
+        },
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown({}),

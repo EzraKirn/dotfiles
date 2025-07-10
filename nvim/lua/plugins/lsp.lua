@@ -11,7 +11,6 @@ return {
     lazy = false,
     config = function()
       require("mason-lspconfig").setup({
-        -- ensure_installed = { "lua_ls", "clangd", "pyright", "bashls" },
         ensure_installed = { "lua_ls", "pyright", "bashls", "texlab" },
       })
     end,
@@ -39,6 +38,12 @@ return {
           "--clang-tidy",
           "--fallback-style=none",
         },
+      })
+      lspconfig.cmake.setup({
+        on_attach = function(client, bufnr)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
       })
       lspconfig.pyright.setup({})
       lspconfig.bashls.setup {}
@@ -82,6 +87,7 @@ return {
           },
         },
       }
+      -- lspconfig.cmake.setup {}
       -- keybinds
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>df", vim.lsp.buf.definition, {})

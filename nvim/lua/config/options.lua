@@ -5,12 +5,13 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set number relativenumber")
 vim.cmd("set nowrap")
 vim.cmd("set foldlevelstart=99")
+vim.cmd("set clipboard=unnamedplus")
 vim.opt.foldmethod = "indent"
 vim.opt.foldcolumn = "0"
 
 -- Diagnostic settings
 vim.diagnostic.config({
-	virtual_text = true,
-	signs = true,
-	underline = true,
+  virtual_text = true,
+  signs = true,
+  underline = true,
 })
