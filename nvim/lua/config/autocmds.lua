@@ -1,22 +1,17 @@
--- Define the augroup and save its handle
-local group = vim.api.nvim_create_augroup("AutoSaveFolds", { clear = true })
+local group = vim.api.nvim_create_augroup("PersistentFolds", { clear = true })
 
-
-vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = '*',
+vim.api.nvim_create_autocmd("BufWinLeave", {
+  pattern = "*.*",
   callback = function()
-    -- Check if the current line is inside a fold
-    if vim.fn.foldclosed('.') ~= -1 then
-      vim.cmd('foldclose')
-    end
-  end
+    vim.cmd.mkview()
+  end,
+  group = group,
 })
 
-vim.api.nvim_create_autocmd({ 'BufEnter', 'CursorMoved' }, {
-  pattern = '*',
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  pattern = "*.*",
   callback = function()
-    if vim.fn.foldclosed('.') ~= -1 then
-      vim.cmd('foldclose')
-    end
-  end
+    vim.cmd.loadview({ mods = { emsg_silent = true } })
+  end,
+  group = group,
 })
