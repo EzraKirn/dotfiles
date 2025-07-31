@@ -4,3 +4,6 @@ vim.g.maplocalleader = "\\"
 -- vim.api.nvim_set_keymap("n", "o", "o<Esc>", { noremap = true, silent = true })
 --
 -- vim.api.nvim_set_keymap("n", "O", "O<Esc>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>df", vim.lsp.buf.definition, {})
+vim.keymap.set("n", "<leader>dc", vim.lsp.buf.declaration, {})
