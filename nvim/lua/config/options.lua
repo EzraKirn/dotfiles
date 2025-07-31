@@ -11,6 +11,7 @@ vim.opt.foldcolumn = "0"
 
 -- Diagnostic settings
 vim.diagnostic.config({
+  severity_sort = true,
   virtual_text = true,
   signs = true,
   underline = true,
