@@ -13,6 +13,8 @@ return {
             "vendor/",
             "node_modules/",
             "build/",
+            "bin/",
+            "submodules/",
             "%.lock",          -- lock files
             "%.min%.js",       -- minified JS
             "%.pdf",           -- PDF files

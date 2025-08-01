@@ -14,7 +14,8 @@ return {
       require("plugins.lsp.servers.pyright").setup(lspconfig, on_attach)
       require("plugins.lsp.servers.bashls").setup(lspconfig, on_attach)
       require("plugins.lsp.servers.cmake").setup(lspconfig, on_attach)
-      -- require("plugins.lsp.servers.texlab").setup(lspconfig, on_attach)
+      require("plugins.lsp.servers.texlab").setup(lspconfig, on_attach)
+      require("plugins.lsp.servers.clangd").setup(lspconfig, on_attach)
     end,
   },
 }
