@@ -25,15 +25,15 @@ return {
             "%.webp",          -- WebP images
           },
         },
-        extensions = {
-          ["ui-select"] = {
-            require("telescope.themes").get_dropdown({}),
-          },
-        },
+        extensions = { ["ui-select"] = { require("telescope.themes").get_dropdown({}), }, },
       })
+
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader><leader>", builtin.find_files, {})
-      vim.keymap.set("n", "<leader>g", builtin.live_grep, {})
+      vim.keymap.set("n", "<leader>b", builtin.buffers, {})
+      vim.keymap.set("n", "<leader>s", builtin.lsp_document_symbols, {})
+      vim.keymap.set("n", "<leader>git", builtin.git_files, {})
+      vim.keymap.set("n", "<leader>ref", builtin.lsp_references, {})
       vim.keymap.set("n", "<leader>of", builtin.oldfiles, {})
 
       require("telescope").load_extension("ui-select")
