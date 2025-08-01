@@ -25,6 +25,7 @@ function M.setup(lspconfig, on_attach, capabilities)
         fallbackFlags = { "-std=c++17" },
       },
     },
+    vim.keymap.set("n", "<leader>h", "<cmd>ClangdSwitchSourceHeader<CR>")
   })
 end
 
