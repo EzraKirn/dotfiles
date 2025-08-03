@@ -1,31 +1,32 @@
+-- ~/.config/nvim/lua/plugins/linter.lua
+
 return {
   "mfussenegger/nvim-lint",
-
-  enabled = false,
-
-  event = {
-    "BufReadPre",
-    "BufNewFile",
-  },
-
+  enabled = true,
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
-    require("lint").linters_by_ft = {
-      python = { "ruff" }, -- or use "flake8", "pylint", etc.
-      lua = { "luacheck" },
-      c = { "clangtidy" },
-      cpp = { "clangtidy" },
+    local lint = require("lint")
+    lint.linters_by_ft = {
+      -- cpp    = { "clangtidy" }, --just add .clangtidy and shit will happend automagicly
+      -- c      = { "clangtidy" },
+      python = { "flake8" },   -- requires pip install flake8
+      lua    = { "luacheck" }, -- requires pacman -S luacheck
     }
 
-    require("lint").linters = {
-      clangtidy = {
-        args = { "--config-file=/home/grzeszko/dotfiles/clang_tidy/.clang-tidy" },
-      },
-    }
-    -- Automatically lint on save
-    vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+    -- Lint on save and buffer enter
+    vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter" }, {
       callback = function()
-        require("lint").try_lint()
+        lint.try_lint()
       end,
     })
+
+    -- Optional: keymap for manual lint trigger
+    vim.keymap.set("n", "<leader>l", function()
+      lint.try_lint()
+    end, { desc = "Lint current file" })
+
+    vim.api.nvim_create_user_command("LintInfo", function()
+      print("Active linters: " .. table.concat(require("lint").get_running(), ", "))
+    end, {})
   end,
 }

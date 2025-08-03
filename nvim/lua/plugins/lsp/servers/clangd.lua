@@ -6,8 +6,8 @@ function M.setup(lspconfig, on_attach, capabilities)
     capabilities = capabilities,
     cmd = {
       "clangd",
+      "--clang-tidy",                -- background indexing to improve responsiveness
       "--background-index",          -- background indexing to improve responsiveness
-      "--clang-tidy",                -- enables clang-tidy diagnostics
       "--header-insertion=iwyu",     -- include-what-you-use style header insertion
       "--completion-style=detailed", -- detailed completion items
       "--function-arg-placeholders",
