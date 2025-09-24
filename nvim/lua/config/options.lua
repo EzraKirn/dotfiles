@@ -8,6 +8,7 @@ vim.cmd("set foldlevelstart=99")
 vim.cmd("set clipboard=unnamedplus")
 vim.opt.foldmethod = "indent"
 vim.opt.foldcolumn = "0"
+vim.o.swapfile = false
 
 -- Diagnostic settings
 vim.diagnostic.config({
