@@ -9,6 +9,8 @@ vim.cmd("set clipboard=unnamedplus")
 vim.opt.foldmethod = "indent"
 vim.opt.foldcolumn = "0"
 vim.o.swapfile = false
+vim.cmd([[set spell]])
+vim.cmd([[set spelllang=pl,en]])
 
 -- Diagnostic settings
 vim.diagnostic.config({
