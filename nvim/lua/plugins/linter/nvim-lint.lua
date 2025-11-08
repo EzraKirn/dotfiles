@@ -9,8 +9,8 @@ return {
     lint.linters_by_ft = {
       -- cpp    = { "clangtidy" }, --just add .clangtidy and shit will happend automagicly
       -- c      = { "clangtidy" },
-      python = { "flake8" },   -- requires pip install flake8
-      lua    = { "luacheck" }, -- requires pacman -S luacheck
+      -- python = { "flake8" },   -- requires pip install flake8
+      lua = { "luacheck" }, -- requires pacman -S luacheck
     }
 
     -- Lint on save and buffer enter

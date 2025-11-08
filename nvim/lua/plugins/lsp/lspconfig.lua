@@ -16,6 +16,8 @@ return {
       require("plugins.lsp.servers.cmake").setup(lspconfig, on_attach)
       require("plugins.lsp.servers.texlab").setup(lspconfig, on_attach)
       require("plugins.lsp.servers.clangd").setup(lspconfig, on_attach)
+      require("plugins.lsp.servers.arduino").setup(lspconfig, on_attach)
+      require("plugins.lsp.servers.tinymist").setup(lspconfig, on_attach)
 
       -- keymapings
       vim.keymap.set("n", "K", vim.lsp.buf.hover)

@@ -12,7 +12,7 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "lua_ls", "pyright", "bashls", "texlab", "cmake",
+          "lua_ls", "pyright", "bashls", "texlab", "cmake", "tinymist",
         },
       })
     end,

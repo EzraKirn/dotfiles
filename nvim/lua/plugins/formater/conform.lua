@@ -19,6 +19,7 @@ return {
       cpp = { "clang-format" },
       json = { "clang-format" },
       cmake = { "cmakelang" },
+      python = { "black" },
     },
 
     format_on_save = {
