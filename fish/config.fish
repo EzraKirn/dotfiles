@@ -42,4 +42,4 @@ function copyfile
     end
 end
 
-
+set -gx PATH $HOME/.cargo/bin $PATH
