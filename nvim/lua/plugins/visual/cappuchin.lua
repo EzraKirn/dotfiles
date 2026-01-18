@@ -28,11 +28,10 @@ return {
       })
       vim.cmd.colorscheme("catppuccin")
 
-      -- Optionally reinforce float styling for consistency
+      -- -- Optionally reinforce float styling for consistency
       local colors = require("catppuccin.palettes").get_palette "mocha"
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = colors.base })
       vim.api.nvim_set_hl(0, "FloatBorder", { fg = colors.blue, bg = colors.base })
     end,
   },
 }
-
