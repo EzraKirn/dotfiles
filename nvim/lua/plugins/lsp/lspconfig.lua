@@ -1,30 +1,31 @@
--- Core Neovim LSPConfig setup
+-- Core Neovim LSP setup (Neovim 0.11+)
 return {
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      local lspconfig = require("lspconfig")
+  "neovim/nvim-lspconfig",
+  config = function()
+    -- Put per-buffer LSP keymaps here (recommended for 0.11+)
+    vim.api.nvim_create_autocmd("LspAttach", {
+      group = vim.api.nvim_create_augroup("MyLspKeymaps", { clear = true }),
+      callback = function(args)
+        local opts = { buffer = args.buf }
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+        vim.keymap.set("n", "df", vim.lsp.buf.definition, opts)
+        vim.keymap.set("n", "dc", vim.lsp.buf.declaration, opts)
+        vim.keymap.set("n", "ca", vim.lsp.buf.code_action, opts)
+        vim.keymap.set("n", "rn", vim.lsp.buf.rename, opts)
+      end,
+    })
 
-      -- Define your on_attach function (or require it from elsewhere)
-      local function on_attach(client, bufnr)
+    -- If you previously used on_attach for common behavior, set defaults here:
+    -- vim.lsp.config("*", { capabilities = ..., flags = ... })
 
-      end
-
-      require("plugins.lsp.servers.lua_ls").setup(lspconfig, on_attach)
-      require("plugins.lsp.servers.pyright").setup(lspconfig, on_attach)
-      require("plugins.lsp.servers.bashls").setup(lspconfig, on_attach)
-      require("plugins.lsp.servers.cmake").setup(lspconfig, on_attach)
-      require("plugins.lsp.servers.texlab").setup(lspconfig, on_attach)
-      require("plugins.lsp.servers.clangd").setup(lspconfig, on_attach)
-      require("plugins.lsp.servers.arduino").setup(lspconfig, on_attach)
-      require("plugins.lsp.servers.tinymist").setup(lspconfig, on_attach)
-
-      -- keymapings
-      vim.keymap.set("n", "K", vim.lsp.buf.hover)
-      vim.keymap.set("n", "<leader>df", vim.lsp.buf.definition)
-      vim.keymap.set("n", "<leader>dc", vim.lsp.buf.declaration)
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
-    end,
-  },
+    -- Call your server modules, but they should now use vim.lsp.config/enable internally
+    require("plugins.lsp.servers.lua_ls").setup()
+    require("plugins.lsp.servers.pyright").setup()
+    require("plugins.lsp.servers.bashls").setup()
+    require("plugins.lsp.servers.cmake").setup()
+    require("plugins.lsp.servers.texlab").setup()
+    require("plugins.lsp.servers.clangd").setup()
+    require("plugins.lsp.servers.arduino").setup()
+    require("plugins.lsp.servers.tinymist").setup()
+  end,
 }

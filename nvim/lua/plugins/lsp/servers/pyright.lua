@@ -1,9 +1,8 @@
 local M = {}
 
-function M.setup(lspconfig, on_attach)
-  lspconfig.pyright.setup({
-    on_attach = on_attach,
-  })
+function M.setup()
+  vim.lsp.config("pyright", {})
+  vim.lsp.enable("pyright")
 end
 
 return M

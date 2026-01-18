@@ -1,20 +1,21 @@
 local M = {}
 
-function M.setup(lspconfig, on_attach, capabilities)
-  lspconfig.clangd.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
+function M.setup()
+  vim.lsp.config("clangd", {
     cmd = {
       "clangd",
-      "--clang-tidy",                -- background indexing to improve responsiveness
-      "--background-index",          -- background indexing to improve responsiveness
-      "--header-insertion=iwyu",     -- include-what-you-use style header insertion
-      "--completion-style=detailed", -- detailed completion items
+      "--clang-tidy",
+      "--background-index",
+      "--header-insertion=iwyu",
+      "--completion-style=detailed",
       "--function-arg-placeholders",
-      "--fallback-style=llvm",       -- fallback style for formatting
+      "--fallback-style=llvm",
     },
     filetypes = { "c", "cpp", "objc", "objcpp" },
-    root_dir = lspconfig.util.root_pattern("compile_commands.json", "compile_flags.txt", ".git"),
+    root_dir = function(bufnr, _)
+      local fname = vim.api.nvim_buf_get_name(bufnr)
+      return vim.fs.root(fname, { "compile_commands.json", "compile_flags.txt", ".git" })
+    end,
     init_options = {
       usePlaceholders = true,
       completeUnimported = true,
@@ -25,8 +26,12 @@ function M.setup(lspconfig, on_attach, capabilities)
         fallbackFlags = { "-std=c++17" },
       },
     },
-    vim.keymap.set("n", "<leader>h", "<cmd>ClangdSwitchSourceHeader<CR>")
+    on_attach = function(client, bufnr)
+      vim.keymap.set("n", "h", "<cmd>ClangdSwitchSourceHeader<CR>", { buffer = bufnr })
+    end,
   })
+
+  vim.lsp.enable("clangd")
 end
 
 return M

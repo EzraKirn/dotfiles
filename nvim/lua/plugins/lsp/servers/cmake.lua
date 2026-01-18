@@ -1,13 +1,14 @@
 local M = {}
 
-function M.setup(lspconfig, on_attach)
-  lspconfig.cmake.setup({
+function M.setup()
+  vim.lsp.config("cmake", {
     on_attach = function(client, bufnr)
       client.server_capabilities.documentFormattingProvider = false
       client.server_capabilities.documentRangeFormattingProvider = false
-      on_attach(client, bufnr)
     end,
   })
+
+  vim.lsp.enable("cmake")
 end
 
 return M

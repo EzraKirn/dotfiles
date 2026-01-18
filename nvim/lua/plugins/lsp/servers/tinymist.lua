@@ -1,8 +1,8 @@
 local M = {}
 
-function M.setup(lspconfig, on_attach)
-  lspconfig.tinymist.setup({
-  })
+function M.setup()
+  vim.lsp.config("tinymist", {})
+  vim.lsp.enable("tinymist")
 end
 
 return M

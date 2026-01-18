@@ -1,11 +1,16 @@
--- lua/plugins/lsp/servers/lua_ls.lua
 local M = {}
 
-function M.setup(lspconfig, on_attach)
-  lspconfig.lua_ls.setup({
-    on_attach = on_attach,
-    -- Add any lua_ls-specific settings here
+function M.setup()
+  vim.lsp.config("lua_ls", {
+    settings = {
+      Lua = {
+        telemetry = { enable = false },
+        diagnostics = { globals = { "vim" } },
+      },
+    },
   })
+
+  vim.lsp.enable("lua_ls")
 end
 
 return M
