@@ -3,26 +3,27 @@
 [font]
 size = 14  # Adjust size as needed
 
+[font.offset]
+y = 2
+
 [font.normal]
-family = "Hack Nerd Font"
+family = "Hack Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "Hack Nerd Font"
+family = "Hack Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "Hack Nerd Font"
+family = "Hack Nerd Font Mono"
 style = "Italic"
 
 [font.bold_italic]
-family = "Hack Nerd Font"
+family = "Hack Nerd Font Mono"
 style = "Bold Italic"
 
-[window]
-startup_mode = "Maximized"
-
 [general]
+
 import = [
   #catpuchin theme
   "~/.config/alacritty/themes/catppuccin-mocha.toml"
