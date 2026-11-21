@@ -8,6 +8,7 @@ if status is-interactive
     #         tmux new-session -s main
     #     end
     # end
+  fish_config theme choose catppuccin-mocha
   neofetch
 end
 
@@ -43,3 +44,6 @@ function copyfile
 end
 
 set -gx PATH $HOME/.cargo/bin $PATH
+
+# Created by `pipx` on 2026-01-31 00:35:47
+set PATH $PATH /home/grzeszko/.local/bin
