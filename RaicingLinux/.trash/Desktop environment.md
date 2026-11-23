@@ -1,5 +1,0 @@
-Tiling window manger [[I3]]
-Network manger [[nmtui]]
-File manger [[nnn]]
-Editor [[NeoVIM]]
-Display manager [[]]

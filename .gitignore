@@ -1,5 +1,6 @@
+setup/logs/*
+autostart/http.desktop
 # Ignors specific to neovim folder
 nvim/lazy-lock.json
 nvim/lazyvim.json
 nvim/.luarc.json
-autostart/http.desktop
