@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-# Exec=xidlehook   --not-when-audio --timer 60 '$HOME/dotfiles/i3/scripts/lockscrean.sh' ''
-Exec=xidlehook --not-when-audio --timer 60 "$HOME/dotfiles/i3/scripts/lockscrean.sh" ''
-Name=Lock Screen
