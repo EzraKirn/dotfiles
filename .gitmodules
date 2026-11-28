@@ -1,9 +1,3 @@
-[submodule "/home/grzeszko/dotfiles/tmux/plugins/tpm"]
-	path = /home/grzeszko/dotfiles/tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm.git
-[submodule "tmux/plugins/tpm"]
-	path = tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm.git
 [submodule "firefox"]
 	path = firefox
 	url = git@github.com:EzraKirn/firefox.git
