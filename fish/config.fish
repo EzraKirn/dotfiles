@@ -9,7 +9,7 @@ if status is-interactive
     #     end
     # end
   fish_config theme choose catppuccin-mocha
-  neofetch
+  fastfetch
 end
 
 set -gx TERM "tmux-256color"
