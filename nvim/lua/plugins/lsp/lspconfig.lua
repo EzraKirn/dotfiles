@@ -22,7 +22,7 @@ return {
     require("plugins.lsp.servers.lua_ls").setup()
     require("plugins.lsp.servers.pyright").setup()
     require("plugins.lsp.servers.bashls").setup()
-    require("plugins.lsp.servers.cmake").setup()
+    -- require("plugins.lsp.servers.cmake").setup()
     require("plugins.lsp.servers.texlab").setup()
     require("plugins.lsp.servers.clangd").setup()
     require("plugins.lsp.servers.arduino").setup()
